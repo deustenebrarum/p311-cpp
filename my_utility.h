@@ -5,8 +5,8 @@
 
 template <typename T>
 int* concat(
-	int array1[], const size_t size1,
-	int array2[], const size_t size2
+	const int array1[], const size_t size1,
+	const int array2[], const size_t size2
 ) {
 	const size_t size3 = size1 + size2;
 	int* array3 = new int[size3] {};
@@ -55,6 +55,29 @@ void insertion_sort(int array[], const size_t size) {
 		for (size_t j = i; j > 0 && array[j - 1] > array[j]; j--) {
 			std::swap(array[j], array[j - 1]);
 		}
+	}
+}
+
+bool has(
+	const int array[],
+	const size_t size,
+	const int value
+) {
+	for (size_t i = 0; i < size; ++i) {
+		if (array[i] == value) return true;
+	}
+	return false;
+}
+
+void generate_random_values(
+	int array[],
+	const size_t size,
+	const int min,
+	const int max
+) {
+	for (size_t i = 0; i < size; i++)
+	{
+		array[i] = rand() % (max - min) + min;
 	}
 }
 
