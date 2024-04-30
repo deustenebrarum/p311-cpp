@@ -5,16 +5,6 @@ bool is_even(int number) {
 	return number % 2 == 0;
 }
 
-void transform(
-	int* array, size_t size,
-	int (*function)(int number)
-) {
-	for (size_t i = 0; i < size; i++)
-	{
-		array[i] = function(array[i]);
-	}
-}
-
 int sqr(int number) {
 	return number * number;
 }
@@ -23,23 +13,38 @@ int cube(int number) {
 	return number * number * number;
 }
 
-int main() {
-	const size_t size = 5;
-	std::cout << "Enter 5 numbers: ";
-	int array[size];
+int sum(std::pair<int, int> pair) {
+	return pair.first + pair.second;
+}
 
-	for (size_t i = 0; i < size; i++) {
-		std::cin >> array[i];
-	}
+int* sumEach(
+	const int* array1, const int* array2,
+	const size_t size
+) {
+	const std::pair<int, int>* pairs = zip(
+		array1, array2, size
+	);
 
-	int (*functions[2])(int) = { sqr, cube };
+	int* result = map(sum, pairs, size);
+
+	delete[] pairs;
+
+	return result;
+}
+
+void functional_example() {
+	const size_t size = 3;
 	
-	std::cout << "1 - square all,\n2 - cube all\n";
+	int array1[size] = { 1, 2, 3 };
+	int array2[size] = { 4, 5, 6 };
 
-	int choice;
-	std::cin >> choice;
+	int* result = sumEach(
+		array1, array2, size
+	);
 
-	transform(array, size, functions[choice - 1]);
+	print(array1, size);
+	print(array2, size);
+	print(result, size);
 
-	print(array, size);
+	delete[] result;
 }

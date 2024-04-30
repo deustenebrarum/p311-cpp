@@ -81,4 +81,46 @@ void generate_random_values(
 	}
 }
 
+void transform(
+	int* array, size_t size,
+	int (*function)(int number)
+) {
+	for (size_t i = 0; i < size; i++)
+	{
+		array[i] = function(array[i]);
+	}
+}
+
+template <typename T, typename TResult>
+TResult* map(
+	TResult (*transform)(T),
+	const T* array,
+	const size_t size
+) {
+	TResult* result = new TResult[size];
+
+	for (size_t i = 0; i < size; i++)
+	{
+		result[i] = transform(array[i]);
+	}
+
+	return result;
+}
+
+template <typename T1, typename T2>
+std::pair<T1, T2>* zip(
+	const T1* array1,
+	const T2* array2,
+	const size_t size
+) {
+	auto result = new std::pair<int, int>[size];
+
+	for (size_t i = 0; i < size; i++)
+	{
+		result[i] = { array1[i], array2[i] };
+	}
+
+	return result;
+}
+
 #endif
