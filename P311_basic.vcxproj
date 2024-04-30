@@ -128,17 +128,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="2d_arrays.cpp" />
-    <ClCompile Include="arrays.cpp" />
-    <ClCompile Include="buckshot.cpp" />
-    <ClCompile Include="functions.cpp" />
-    <ClCompile Include="homework.cpp" />
-    <ClCompile Include="binarysearch.cpp" />
+    <ClCompile Include="function_pointers.cpp" />
     <ClCompile Include="pointers.cpp" />
-    <ClCompile Include="recursive.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="utility.h" />
+    <ClInclude Include="my_utility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
