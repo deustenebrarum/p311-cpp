@@ -1,8 +1,38 @@
 //#include <iostream>
-//#include <vector>
-//#include "Windows.h"
 //#include "my_utility.h"
 //
+//int* concatenate(
+//	const int* array1, const size_t size1,
+//	const int* array2, const size_t size2
+//) {
+//	int* result = new int[size1 + size2];
+//
+//	for (size_t i = 0; i < size1; i++)
+//	{
+//		result[i] = array1[i];
+//	}
+//	for (size_t i = 0; i < size2; i++)
+//	{
+//		result[i + size1] = array2[i];
+//	}
+//
+//	return result;
+//}
+//
+//int sum(int aa, int b) {
+//	return aa + b;
+//}
+//
+//int sub(int a, int b) {
+//	return a - b;
+//}
+//
+//void pointers_example() {
+//	int (*operation[2]) (int, int) { sum, sub };
+//
+//	std::cout << operation[1](1, 2);
+//}
+
 //bool has(
 //	int array[],
 //	const size_t size,

@@ -17,7 +17,7 @@ void Contact_Print(const Contact contact) {
 		<< contact.home_phone;
 }
 
-int main() {
+void structures_example() {
 	Contact contact{
 		"John",
 		"123-456-7890",

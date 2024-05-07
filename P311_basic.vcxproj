@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClCompile Include="function_pointers.cpp" />
     <ClCompile Include="pointers.cpp" />
+    <ClCompile Include="strings.cpp" />
     <ClCompile Include="structures.cpp" />
   </ItemGroup>
   <ItemGroup>
