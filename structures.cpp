@@ -1,28 +1,37 @@
 #include <iostream>
+#include <Windows.h>
 
-struct Contact {
-	const char* name;
-	const char* mobile_phone;
-	const char* home_phone;
+struct Car {
+	int speed;
+	int distance;
 };
 
-void Contact_Print(const Contact contact) {
-	std::cout << "Name: "
-		<< contact.name
-		<< std::endl
-		<< "Mobile phone: "
-		<< contact.mobile_phone
-		<< std::endl
-		<< "Home phone: "
-		<< contact.home_phone;
+void Car_Print(const Car& car) {
+	for (size_t i = 0; i < car.distance; i++)
+	{
+		std::cout << ' ';
+	}
+	std::cout << "=\n";
 }
 
 int main() {
-	Contact contact{
-		"John",
-		"123-456-7890",
-		"987-654-3210"
-	};
+	const size_t size = 3;
+	Car cars[size];
+	for (size_t i = 0; i < size; i++)
+	{
+		cars[i].distance = 0;
+		cars[i].speed = 1 + rand() % 3;
+	}
 
-	Contact_Print(contact);
+	for (size_t _ = 0; _ < 20; _++) {
+		system("cls");
+		for (size_t i = 0; i < size; i++)
+		{
+			std::cout << i << '.';
+			Car_Print(cars[i]);
+			cars[i].distance += cars[i].speed;
+			cars[i].speed = 1 + rand() % 3;
+		}
+		Sleep(500);
+	}
 }
