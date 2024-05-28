@@ -123,4 +123,15 @@ std::pair<T1, T2>* zip(
 	return result;
 }
 
+int* copy(const int* array, const size_t size) {
+	int* result = new int[size];
+
+	for (size_t i = 0; i < size; i++)
+	{
+		result[i] = array[i];
+	}
+
+	return result;
+}
+
 #endif
