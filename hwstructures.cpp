@@ -79,7 +79,7 @@ void sort_by(
 	}
 }
 
-int main() {
+void library_example() {
 	setlocale(LC_ALL, "Russian");
 
 	Book books[4]{

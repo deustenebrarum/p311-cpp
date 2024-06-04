@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClCompile Include="hwstructures.cpp" />
     <ClCompile Include="structures.cpp" />
+    <ClCompile Include="test_arrays.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="my_utility.h" />
