@@ -186,7 +186,7 @@ void show_track(
 	}
 }
 
-int car_tracks() {
+int mashinkas_example() {
 	srand(time(NULL));
 	const size_t mashinkas_count = 10;
 	Mashinka* mashinkas = generate_mashinkas(
