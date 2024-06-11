@@ -129,7 +129,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="hwstructures.cpp" />
-    <ClCompile Include="structures.cpp" />
+    <ClCompile Include="mashinkas.cpp" />
+    <ClCompile Include="notes.cpp" />
     <ClCompile Include="test_arrays.cpp" />
   </ItemGroup>
   <ItemGroup>

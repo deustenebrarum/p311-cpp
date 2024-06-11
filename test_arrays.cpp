@@ -2,7 +2,7 @@
 #include <stdexcept>
 #include "Array.h"
 
-int test_arrays() {
+int test_arrays1() {
 	Array<int> array {};
 
 	append(array, 1);

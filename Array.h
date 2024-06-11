@@ -2,9 +2,9 @@
 
 template <typename T>
 struct Array {
-	T* data = new int[10];
+	T* data = nullptr;
 	size_t size = 0;
-	size_t capacity = 10;
+	size_t capacity = 0;
 };
 
 template <typename T>
@@ -17,9 +17,26 @@ T& get(Array<T>& array, const size_t index) {
 }
 
 template <typename T>
+const T& get(const Array<T>& array, const size_t index) {
+	if (index >= array.size) {
+		throw std::out_of_range("Index out of range");
+	}
+
+	return array.data[index];
+}
+
+template <typename T>
 void print(Array<T>& array) {
 	for (size_t i = 0; i < array.size; i++) {
 		std::cout << get(array, i) << ' ';
+	}
+	std::cout << '\n';
+}
+
+template <typename T>
+void print_specific(const Array<T>& array) {
+	for (size_t i = 0; i < array.size; i++) {
+		print(get(array, i));
 	}
 	std::cout << '\n';
 }
@@ -47,7 +64,7 @@ void append(Array<T>& array, T value) {
 		delete[] array.data;
 		array.data = new_data;
 	}
-
+	
 	array.data[array.size] = value;
 	array.size++;
 }
