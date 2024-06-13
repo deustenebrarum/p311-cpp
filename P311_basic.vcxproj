@@ -128,14 +128,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="hwstructures.cpp" />
-    <ClCompile Include="mashinkas.cpp" />
-    <ClCompile Include="notes.cpp" />
-    <ClCompile Include="test_arrays.cpp" />
+    <ClCompile Include="folders.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />
-    <ClInclude Include="my_utility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,7 +4,7 @@
 #include "Array.h"
 
 struct Date {
-	int year; int month;
+	int year;int month;
 	int day;
 };
 
@@ -85,14 +85,14 @@ void callMenu(Array<Note>& notes) {
 	}
 }
 
-int main() {
+int notes_menu_example() {
 	setlocale(LC_ALL, "Russian");
 	Array<Note> notes;
-
+	
 	while (true) {
 		callMenu(notes);
 	}
 
 	return 0;
 }
-
+	
