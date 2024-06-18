@@ -36,12 +36,7 @@ void print(
 	}
 }
 
-struct Node {
-	int value;
-	Node* next_node;
-};
-
-int main() {
+int folders_example() {
 	Folder root {
 		"root",
 		{}, {}
