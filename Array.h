@@ -18,7 +18,7 @@ public:
 	Array(std::initializer_list<T> list) {
 		capacity_ = list.size();
 		size_ = 0;
-		data_ = new T[capacity_];
+		data_ = allocate(capacity_);
 		for (const T* ptr = list.begin(); ptr != list.end(); ptr++) {
 			append(*ptr);
 		}
@@ -26,6 +26,10 @@ public:
 
 	~Array() {
 		delete[] data_;
+	}
+
+	T* allocate(const size_t capacity) {
+		return static_cast<T*>(::operator new (sizeof T * capacity_));
 	}
 
 	const size_t& size() const {
@@ -83,7 +87,7 @@ public:
 	}
 
 	void reallocate(size_t new_capacity) {
-		T* new_data = new T[new_capacity];
+		T* new_data = allocate(new_capacity);
 
 		capacity_ = new_capacity;
 
