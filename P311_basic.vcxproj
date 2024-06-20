@@ -130,7 +130,7 @@
   <ItemGroup>
     <ClCompile Include="classes.cpp" />
     <ClCompile Include="folders.cpp" />
-    <ClCompile Include="hw_s.cpp" />
+    <ClCompile Include="hw_structures_array.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />

@@ -21,7 +21,7 @@
     <ClCompile Include="classes.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="hw_s.cpp">
+    <ClCompile Include="hw_structures_array.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

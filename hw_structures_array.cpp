@@ -1,48 +1,50 @@
 #include <iostream>
-#include "Array.h"
+#include <vector>
+#include <algorithm>
+#include <cstring>
 
 struct Meabeab {
 	int weight;
 	const char* name;
 };
 
-void print(Meabeab meabeab) {
-	std::cout << meabeab.name << ' ' << meabeab.weight << '\n';
-}
-
-void print(Array<Meabeab>& meabeabs) {
-	for (size_t i = 0; i < meabeabs.size(); i++)
-	{
-		std::cout << meabeabs[i].name << ' ' 
-			<< meabeabs[i].weight << '\n';
-	}
-}
-
-void add_meabeab(Array<Meabeab>& meabeabs) {
-	Meabeab new_meabeab;
-	std::cin >> new_meabeab.weight;
-	new_meabeab.name = "meabebab";
-	meabeabs.append(new_meabeab);
-}
-
-void find_by_weight(Array<Meabeab>& meabeabs) {
-	int weight;
-	std::cin >> weight;
-	for (size_t i = 0; i < meabeabs.size(); i++)
-	{
-		if (meabeabs[i].weight == weight)
-		{
-			print(meabeabs[i]);
-		}
-	}
-}
-
 int main() {
-	Array<Meabeab> array(10);
-	for (size_t i = 0; i < 3; i++)
-	{
-		add_meabeab(array);
-	}
+	std::vector<Meabeab> vec;
 
-	find_by_weight(array);
+	vec.push_back(Meabeab{
+		2, "alesha"
+	});
+	vec.push_back(Meabeab{
+		9, "petya"
+	});
+	vec.push_back(Meabeab{
+		4, "petuh"
+	});
+	vec.push_back(Meabeab{
+		7, "citer"
+	});
+
+	vec.erase(vec.begin() + 2);
+
+	
+
+	std::sort(vec.begin(), vec.end(), 
+		[&vec](const Meabeab& left, const Meabeab& right) {
+			return left.weight < right.weight;
+		}
+	);
+
+	std::vector<std::reference_wrapper<Meabeab>> selected_meabeabs;
+	selected_meabeabs.reserve(vec.size());
+
+	std::copy_if(
+		vec.begin(),
+		vec.end(),
+		std::back_inserter(selected_meabeabs),
+		[](const Meabeab& item) { return strstr(item.name, "t"); }
+	);
+
+	for (size_t i = 0; i < selected_meabeabs.size(); i++) {
+		std::cout << i + 1 << selected_meabeabs[i].get().name << ' ';
+	}
 }
